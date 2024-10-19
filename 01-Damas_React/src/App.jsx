@@ -17,7 +17,6 @@ function App() {
                   key = { index }
                   index = { index }
                   >
-                    { index }
                   </Square>
                 )
                 

@@ -13,14 +13,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+
+
 .square {
+  display: flex;
   width: 70px;
   height: 70px;
   background-color: aquamarine;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.brown {
+  background-color: rgb(13, 36, 138);
 }
 
 .board .game {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 1px;
+  gap: 2px;
 }
