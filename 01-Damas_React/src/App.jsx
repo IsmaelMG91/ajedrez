@@ -1,8 +1,11 @@
 import { Square } from "./components/Square"
-
-const board = Array(64).fill(null)
+import { initialBoard } from "./constant"
+import { useState } from "react"
 
 function App() {
+
+  //inicializamos el estado del tablero
+  const [board, setBoard] = useState(initialBoard)
   
 
   return (
@@ -16,6 +19,7 @@ function App() {
                   <Square
                   key = { index }
                   index = { index }
+                  piece = { board[index] }
                   >
                   </Square>
                 )

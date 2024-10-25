@@ -1,4 +1,4 @@
-export const Square = ({ children, index }) => {
+export const Square = ({ children, index, piece }) => {
 
     const row = Math.floor(index / 8)
     const col = index % 8
@@ -7,7 +7,7 @@ export const Square = ({ children, index }) => {
     const className = `square ${isBeige ? 'beige': 'brown' }`
 
     return (
-        <div className={className}> { children } </div>
+        <div className={className}> { children }{ piece } </div>
     )
 
 }
