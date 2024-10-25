@@ -1,4 +1,4 @@
-export const Square = ({ children, index, piece }) => {
+export const Square = ({ children, index, piece, updateBoard }) => {
 
     const row = Math.floor(index / 8)
     const col = index % 8
@@ -6,8 +6,12 @@ export const Square = ({ children, index, piece }) => {
 
     const className = `square ${isBeige ? 'beige': 'brown' }`
 
+    const handleClick = () => {
+        updateBoard(index)
+    }
+
     return (
-        <div className={className}> { children }{ piece } </div>
+        <div onClick={handleClick} className={className}> { children }{ piece } </div>
     )
 
 }

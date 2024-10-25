@@ -6,6 +6,24 @@ function App() {
 
   //inicializamos el estado del tablero
   const [board, setBoard] = useState(initialBoard)
+  //se almacena la pieza seleccionada
+  const [pieceSelected, setPieceSelected] = useState(null)
+
+  const updateBoard = (index) =>{
+    const newBoard = [...board]
+    //const oldPosition = index
+    const newPosition = pieceSelected ? index : null
+    //console.log(oldPosition)
+    console.log(newPosition)
+
+    if (board[index]) setPieceSelected(board[index])
+    if (newPosition) {
+      newBoard[newPosition] = pieceSelected
+      //newBoard[oldPosition] = null
+      setBoard(newBoard)
+      setPieceSelected(null)
+    }
+  }
   
 
   return (
@@ -20,6 +38,7 @@ function App() {
                   key = { index }
                   index = { index }
                   piece = { board[index] }
+                  updateBoard = {updateBoard}
                   >
                   </Square>
                 )
