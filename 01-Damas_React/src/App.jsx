@@ -9,17 +9,21 @@ function App() {
   //se almacena la pieza seleccionada
   const [pieceSelected, setPieceSelected] = useState(null)
 
-  const updateBoard = (index) =>{
-    const newBoard = [...board]
-    //const oldPosition = index
-    const newPosition = pieceSelected ? index : null
-    //console.log(oldPosition)
-    console.log(newPosition)
+  const selectPiece = (index) => {
+    if (board[index]) setPieceSelected({
+      piece: board[index],
+      position: index
+    })
+  }
 
-    if (board[index]) setPieceSelected(board[index])
+  const updateBoard = (index) => {
+    const newPosition = pieceSelected ? index : null
+    console.log(newPosition)
+    
     if (newPosition) {
-      newBoard[newPosition] = pieceSelected
-      //newBoard[oldPosition] = null
+      board[pieceSelected.position] = null
+      const newBoard = [...board]
+      newBoard[newPosition] = pieceSelected.piece
       setBoard(newBoard)
       setPieceSelected(null)
     }
@@ -38,6 +42,7 @@ function App() {
                   key = { index }
                   index = { index }
                   piece = { board[index] }
+                  selectPiece={selectPiece}
                   updateBoard = {updateBoard}
                   >
                   </Square>
