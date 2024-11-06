@@ -12,7 +12,7 @@ export const Square = ({ children, index, piece, selectPiece, updateBoard }) => 
     }
 
     return (
-        <div onClick={handleClick} className={className}> { children }{ piece } </div>
+        <div onClick={handleClick} className={className}> {children}{ piece } </div>
     )
 
 }

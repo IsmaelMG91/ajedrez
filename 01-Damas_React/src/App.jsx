@@ -1,6 +1,7 @@
 import { Square } from "./components/Square"
 import { initialBoard } from "./constant"
 import { useState } from "react"
+import { TURNS } from "./constant"
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
   return (
     <>
       <main className="board">
-        <h3>Damas en React</h3>
+        <h3>Ajedrez en React</h3>
           <section className="game">
             {
               board.map((_,index) => {
@@ -41,7 +42,7 @@ function App() {
                   <Square
                   key = { index }
                   index = { index }
-                  piece = { board[index] }
+                  piece = { board[index] ? board[index]['render'] : null}
                   selectPiece={selectPiece}
                   updateBoard = {updateBoard}
                   >
