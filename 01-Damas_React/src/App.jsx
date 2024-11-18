@@ -1,11 +1,11 @@
 import { Square } from "./components/Square"
+import { WinnerModal } from "./components/WinnerModal"
 import { initialBoard } from "./constant"
 import { useState } from "react"
 import { TURNS } from "./constant"
 import { checkWinner } from "./logic/board"
 
 // TO DO:
-//        -Añadir lógica de victoria (que el rey sea eliminado) y botón de reset
 //        -Evitar que las piezas del mismo color se puedan "comer" entre ellas
 //        -Añadir lógica de movimiento a, al menos, un tipo de pieza
 
@@ -24,6 +24,7 @@ function App() {
   const selectPiece = (index) => {
       if (board[index] && board[index].color === turn && winner === null) setPieceSelected({
         piece: board[index],
+        color: board[index].color,
         position: index
       })
     }
@@ -36,8 +37,8 @@ function App() {
     let newBoard
     
     if (newPosition) {
-      board[pieceSelected.position] = null
       newBoard = [...board]
+      newBoard[pieceSelected.position] = null
       newBoard[newPosition] = pieceSelected.piece
       setBoard(newBoard)
       setPieceSelected(null)
@@ -48,6 +49,13 @@ function App() {
     if (newWinner)
       setWinner(newWinner)
       console.log(winner)
+  }
+
+  const resetGame = () => {
+    setBoard(initialBoard)
+    setPieceSelected(null)
+    setTurn(TURNS[0])
+    setWinner(null)
   }
   
 
@@ -78,7 +86,10 @@ function App() {
               <h4>Turno de las piezas {turn === TURNS[0] ? 'blancas' : 'negras'}</h4> 
               : ''
             }
-            
+            <WinnerModal
+            winner = {winner}
+            resetGame = {resetGame}
+            ></WinnerModal>
           </section>        
       </main>    
     </>
