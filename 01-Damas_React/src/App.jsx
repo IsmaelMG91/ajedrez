@@ -31,7 +31,17 @@ function App() {
 
   const updateBoard = (index) => {
 
-    const newPosition = pieceSelected ? index : null
+    //const newPosition = pieceSelected ? index : null
+    let newPosition = null
+
+    if (pieceSelected) {
+      if (board[index] === null || pieceSelected.color !== board[index].color) {
+        newPosition = index
+      } else if (pieceSelected.color === board[index].color){
+        setPieceSelected(null)
+        alert("No puedes eliminar piezas de tu mismo color")
+      }
+    }
     console.log(newPosition)
 
     let newBoard
@@ -48,7 +58,6 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if (newWinner)
       setWinner(newWinner)
-      console.log(winner)
   }
 
   const resetGame = () => {
@@ -73,6 +82,7 @@ function App() {
                   piece = { board[index] ? board[index]['render'] : null}
                   selectPiece={selectPiece}
                   updateBoard = {updateBoard}
+                  pieceSelected = {pieceSelected ? pieceSelected.position : null}
                   >
                   </Square>
                 )
