@@ -1,11 +1,12 @@
 //export const initialBoard = ['T', 'C', 'A', 'D', 'R', 'A', 'C', 'T', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'T', 'C', 'A', 'D', 'R', 'A', 'C', 'T']
+//por convenio, las constantes van en mayúsculas
 
 export const initialBoard = [
     {
         type: 'rook',
         color: 'white',
         position: 0,
-        render: '🍔' 
+        render: '/chess_pieces/rook_w.png'
     },
     {
         type: 'knight',

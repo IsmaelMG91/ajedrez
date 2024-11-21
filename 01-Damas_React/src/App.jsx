@@ -79,7 +79,8 @@ function App() {
                   <Square
                   key = { index }
                   index = { index }
-                  piece = { board[index] ? board[index]['render'] : null}
+                  type = { board[index] ? board[index].type : null}
+                  color = { board[index] ? board[index].color : null }
                   selectPiece={selectPiece}
                   updateBoard = {updateBoard}
                   pieceSelected = {pieceSelected ? pieceSelected.position : null}

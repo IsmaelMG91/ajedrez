@@ -1,4 +1,4 @@
-export const Square = ({ children, index, piece, selectPiece, updateBoard, pieceSelected }) => {
+export const Square = ({ children, index, type, color, selectPiece, updateBoard, pieceSelected }) => {
 
     const row = Math.floor(index / 8)
     const col = index % 8
@@ -12,7 +12,9 @@ export const Square = ({ children, index, piece, selectPiece, updateBoard, piece
     }
 
     return (
-        <div onClick={handleClick} className={className}> {children}{ piece } </div>
+        <div onClick={handleClick} className={className}> {children}
+        {type ? <img src={ `./chess_pieces/${type}_${color}.png`}/> : null}         
+        </div>
     )
 
 }
