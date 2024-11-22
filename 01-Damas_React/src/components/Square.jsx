@@ -1,10 +1,11 @@
 export const Square = ({ children, index, type, color, selectPiece, updateBoard, pieceSelected }) => {
 
+    //lógica para dibujar los colores del tablero
     const row = Math.floor(index / 8)
     const col = index % 8
-    const isBeige = (row + col) % 2 === 0
+    const isWhite = (row + col) % 2 === 0
 
-    const className = `square ${isBeige ? 'beige': 'brown' } ${pieceSelected === index ? 'selected': ''}`
+    const className = `square ${isWhite ? 'white': 'black' } ${pieceSelected === index ? 'selected': ''}`
 
     const handleClick = () => {
         selectPiece(index)

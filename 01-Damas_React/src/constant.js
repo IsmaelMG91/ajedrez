@@ -1,198 +1,164 @@
-//export const initialBoard = ['T', 'C', 'A', 'D', 'R', 'A', 'C', 'T', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'T', 'C', 'A', 'D', 'R', 'A', 'C', 'T']
-//por convenio, las constantes van en mayúsculas
-
-export const initialBoard = [
+// tablero inicial
+export const INITIALBOARD = [
     {
         type: 'rook',
-        color: 'white',
+        color: 'black',
         position: 0,
-        render: '/chess_pieces/rook_w.png'
     },
     {
         type: 'knight',
-        color: 'white',
+        color: 'black',
         position: 1,
-        render: '🍳' 
     },
     {
         type: 'bishop',
-        color: 'white',
-        position: 2,
-        render: '🌭' 
+        color: 'black',
+        position: 2, 
     },
     {
         type: 'queen',
-        color: 'white',
-        position: 3,
-        render: '🦪' 
+        color: 'black',
+        position: 3, 
     },
     {
         type: 'king',
-        color: 'white',
+        color: 'black',
         position: 4,
-        render: '🥩' 
     },
     {
         type: 'bishop',
-        color: 'white',
-        position: 5,
-        render: '🌭' 
+        color: 'black',
+        position: 5, 
     },
     {
         type: 'knight',
-        color: 'white',
+        color: 'black',
         position: 6,
-        render: '🍳' 
     },
     {
         type: 'rook',
-        color: 'white',
+        color: 'black',
         position: 7,
-        render: '🍔' 
     },
     {
         type: 'pawn',
-        color: 'white',
-        position: 8,
-        render: '🍟' 
+        color: 'black',
+        position: 8, 
     }, 
     {
         type: 'pawn',
-        color: 'white',
-        position: 9,
-        render: '🍟' 
+        color: 'black',
+        position: 9, 
     },
     {
         type: 'pawn',
-        color: 'white',
+        color: 'black',
         position: 10,
-        render: '🍟' 
     },
     {
         type: 'pawn',
-        color: 'white',
+        color: 'black',
         position: 11,
-        render: '🍟' 
     },
     {
         type: 'pawn',
-        color: 'white',
-        position: 12,
-        render: '🍟' 
+        color: 'black',
+        position: 12, 
     },
     {
         type: 'pawn',
-        color: 'white',
-        position: 13,
-        render: '🍟' 
+        color: 'black',
+        position: 13, 
     },
     {
         type: 'pawn',
-        color: 'white',
-        position: 14,
-        render: '🍟' 
+        color: 'black',
+        position: 14, 
     },
     {
         type: 'pawn',
-        color: 'white',
+        color: 'black',
         position: 15,
-        render: '🍟' 
     }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
     {
         type: 'pawn',
-        color: 'black',
+        color: 'white',
         position: 48,
-        render: '🫘' 
     },
     {
         type: 'pawn',
-        color: 'black',
+        color: 'white',
         position: 49,
-        render: '🫘' 
     },
     {
         type: 'pawn',
-        color: 'black',
-        position: 50,
-        render: '🫘' 
+        color: 'white',
+        position: 50, 
     },
     {
         type: 'pawn',
-        color: 'black',
-        position: 51,
-        render: '🫘' 
+        color: 'white',
+        position: 51, 
     },
     {
         type: 'pawn',
-        color: 'black',
+        color: 'white',
         position: 52,
-        render: '🫘' 
     },
     {
         type: 'pawn',
-        color: 'black',
-        position: 53,
-        render: '🫘' 
+        color: 'white',
+        position: 53, 
     },
     {
         type: 'pawn',
-        color: 'black',
-        position: 54,
-        render: '🫘' 
+        color: 'white',
+        position: 54, 
     },
     {
         type: 'pawn',
-        color: 'black',
+        color: 'white',
         position: 55,
-        render: '🫘' 
     },
     {
         type: 'rook',
-        color: 'black',
+        color: 'white',
         position: 56,
-        render: '🍄' 
     },
     {
         type: 'knight',
-        color: 'black',
-        position: 57,
-        render: '🥕' 
+        color: 'white',
+        position: 57, 
     },
     {
         type: 'bishop',
-        color: 'black',
-        position: 58,
-        render: '🫛' 
+        color: 'white',
+        position: 58, 
     },
     {
         type: 'queen',
-        color: 'black',
+        color: 'white',
         position: 59,
-        render: '🥑' 
     },
     {
         type: 'king',
-        color: 'black',
-        position: 60,
-        render: '🍆' 
+        color: 'white',
+        position: 60, 
     },
     {
         type: 'bishop',
-        color: 'black',
-        position: 61,
-        render: '🫛' 
+        color: 'white',
+        position: 61, 
     },
     {
         type: 'knight',
-        color: 'black',
-        position: 62,
-        render: '🥕' 
+        color: 'white',
+        position: 62, 
     },
     {
         type: 'rook',
-        color: 'black',
-        position: 63,
-        render: '🍄' 
+        color: 'white',
+        position: 63, 
     }]
-
+//turnos
 export const TURNS = ['white', 'black']
