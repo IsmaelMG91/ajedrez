@@ -19,3 +19,9 @@ Los turnos se irán alternando entre blancas y negras hasta que uno de los dos b
 <img src="/img/03_chess_end.png">
 </div>
 
+Tecnologías utilizadas:
+- HTML
+- CSS
+- JavaScript
+- React.js
+
